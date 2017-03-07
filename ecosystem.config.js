@@ -27,7 +27,6 @@ module.exports = {
       user : "lszita",
       host : "flapweb.tech",
       ref  : "origin/master",
-      
       repo : "git@github.com:repo.git",
       path : "/home/lszita",
       key : "C:\Users\Lajos Szita\.ssh\id_rsa",
