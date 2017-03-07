@@ -28,7 +28,7 @@ module.exports = {
       host : "flapweb.tech",
       ref  : "origin/master",
       repo : "git@github.com:lszita/deploy-test.git",
-      path : "/home/lszita",
+      path : "/home/lszita/hello2",
       key : "/d/ssh/id_rsa",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
