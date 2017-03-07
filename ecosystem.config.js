@@ -29,7 +29,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "git@github.com:lszita/deploy-test.git",
       path : "/home/lszita",
-      key : "D:\ssh\id_rsa",
+      key : "/d/ssh/id_rsa",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
     dev : {
