@@ -29,7 +29,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "git@github.com:lszita/deploy-test.git",
       path : "/home/lszita",
-      key : "C:\Users\Lajos Szita\.ssh\id_rsa",
+      key : "D:\ssh\id_rsa",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
     dev : {
