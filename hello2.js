@@ -1,6 +1,9 @@
 #!/usr/bin/env nodejs
 const http = require('http');
 const mysql = require('mysql');
+
+console.log(process.env.DB_URL);
+
 const connection = mysql.createConnection(process.env.DB_URL);
 
 http.createServer(function (req, res) {
