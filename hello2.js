@@ -2,7 +2,9 @@
 const http = require('http');
 const mysql = require('mysql');
 
-console.log(process.env.DB_URL);
+console.log('DB_URL is : ' + process.env.DB_URL);
+console.log('NODE_ENVIRONMENT is : ' + process.env.NODE_ENV);
+
 
 const connection = mysql.createConnection(process.env.DB_URL);
 

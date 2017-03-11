@@ -13,8 +13,7 @@ module.exports = {
         COMMON_VARIABLE: "true"
       },
       env_production : {
-        NODE_ENV: "production",
-        DB_URL: "$DB_URL"
+        NODE_ENV: "production"
       }
     }
   ],
