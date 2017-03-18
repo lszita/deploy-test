@@ -6,7 +6,7 @@ const mysql = require('mysql');
 
 console.log('read settings from : ' + process.env.SETTINGS_FILE);
 
-const settings = JSON.parse(fs.readFileSync(process.env.DB_URL,'utf8'));
+const settings = JSON.parse(fs.readFileSync(process.env.SETTINGS_FILE,'utf8'));
 
 http.createServer(function (req, res) {
 
