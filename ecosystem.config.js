@@ -14,7 +14,7 @@ module.exports = {
       },
       env_production : {
         NODE_ENV: "production",
-        SETTINGS_FILE: "~/flapweb_settings.js"
+        SETTINGS_FILE: "/home/lszita/flapweb_settings.js"
       }
     }
   ],
