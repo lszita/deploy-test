@@ -7,9 +7,10 @@ const mysql = require('mysql');
 console.log('read settings from : ' + process.env.SETTINGS_FILE);
 
 const settings = JSON.parse(fs.readFileSync(process.env.SETTINGS_FILE,'utf8'));
-const connection = mysql.createConnection(settings.db);
 
 http.createServer(function (req, res) {
+
+  const connection = mysql.createConnection(settings.db);
 
   connection.query('SELECT NOW() AS THE_TIME', (err,dbres,fields) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
