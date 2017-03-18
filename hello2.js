@@ -6,7 +6,7 @@ const mysql = require('mysql');
 
 console.log('read settings from : ' + process.env.SETTINGS_FILE);
 
-const settings = JSON.parse(fs.readFileSync(process.env.DB_URL,'charset=us-ascii'));
+const settings = JSON.parse(fs.readFileSync(process.env.DB_URL,'us-ascii'));
 
 http.createServer(function (req, res) {
 
