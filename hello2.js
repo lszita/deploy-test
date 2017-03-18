@@ -1,14 +1,16 @@
 #!/usr/bin/env nodejs
+
+const fs = require('fs');
 const http = require('http');
 const mysql = require('mysql');
 
-console.log('DB_URL is : ' + process.env.DB_URL);
-console.log('NODE_ENVIRONMENT is : ' + process.env.NODE_ENV);
+console.log('read settings from : ' + process.env.SETTINGS_FILE);
 
-
-const connection = mysql.createConnection(process.env.DB_URL);
+const settings = JSON.parse(fs.readFileSync(process.env.DB_URL,'charset=us-ascii'));
 
 http.createServer(function (req, res) {
+
+  const connection = mysql.createConnection(settings.db);
 
   connection.query('SELECT NOW() AS THE_TIME', (err,dbres,fields) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
