@@ -15,7 +15,7 @@ http.createServer(function (req, res) {
   connection.query('SELECT NOW() AS THE_TIME', (err,dbres,fields) => {
     
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World from node app, the time from db is:' + JSON.stringify(dbres) +  ' \n');
+    res.end('Hello World!! from node app, the time from db is:' + JSON.stringify(dbres) +  ' \n');
     
     connection.end((err) => {
       console.log('closed conn');
