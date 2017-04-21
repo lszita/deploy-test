@@ -1,16 +1,23 @@
 #!/usr/bin/env nodejs
 
-const http = require('http');
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
-http.createServer(function (req, res) {
-  
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World');
+io.on('connection', function(socket){
+  console.log('a user connected');
 
-}).listen(8081, 'localhost');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
 
+  socket.on('control', function(direction){
+    console.log('direction: ' + direction);
+    socket.broadcast.emit('control', direction);
+  });
 
+});
 
-
-
-console.log('Server running at http://localhost:8081/');
+http.listen(8081, function(){
+  console.log('listening on *:8081');
+});
